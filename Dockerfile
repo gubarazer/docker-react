@@ -15,4 +15,7 @@ RUN npm run build
 
 FROM nginx as runner
 
+# AWS port mapping
+EXPOSE 80
+
 COPY --from=builder /home/node/app/build /usr/share/nginx/html
